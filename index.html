@@ -18,7 +18,6 @@
             line-height: 1.47059;
             font-weight: 400;
             letter-spacing: -0.022em;
-            overflow-x: hidden;
         }
 
         .container {
@@ -31,25 +30,23 @@
         nav {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 9999;
-            height: 48px;
+            height: 44px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .nav-content {
-            max-width: 1000px;
+            max-width: 980px;
             width: 100%;
             height: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             padding: 0 22px;
         }
@@ -59,9 +56,6 @@
             display: flex;
             height: 100%;
             align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 600px;
         }
 
         .nav-list li {
@@ -75,280 +69,10 @@
             opacity: 0.8;
             text-decoration: none;
             font-size: 12px;
-            font-weight: 400;
-            transition: opacity 0.2s ease;
+            margin: 0 10px;
+            transition: opacity 0.3s;
         }
 
-        .nav-list a:hover {
-            opacity: 1;
-        }
-
-        /* Hero Section */
-        .gradient-bg {
-            background: linear-gradient(180deg, #000 0%, #121212 100%);
-            padding-top: 120px;
-            overflow: hidden;
-        }
-
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-bottom: 60px;
-        }
-
-        .hero-text {
-            margin-bottom: 40px;
-        }
-
-        .hero-eyebrow {
-            font-size: 19px;
-            color: #6e6e73;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-
-        .hero-title {
-            font-size: 56px;
-            line-height: 1.07143;
-            font-weight: 600;
-            letter-spacing: -0.005em;
-            margin-bottom: 8px;
-            background: linear-gradient(90deg, #A6B1E1 0%, #D3E0EA 50%, #A6B1E1 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-subtitle {
-            font-size: 28px;
-            line-height: 1.10722;
-            font-weight: 400;
-            letter-spacing: 0.004em;
-            margin-bottom: 18px;
-        }
-
-        .product-image {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            margin: 20px auto;
-            filter: drop-shadow(0 0 20px rgba(166, 177, 225, 0.5));
-            transition: transform 0.5s ease;
-        }
-
-        .product-image:hover {
-            transform: scale(1.02);
-        }
-
-        /* Buttons */
-        .cta-container {
-            margin: 30px 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .button {
-            background-color: #0071e3;
-            color: white;
-            border-radius: 980px;
-            font-size: 17px;
-            line-height: 1.17648;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-            padding: 8px 22px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #0077ED;
-            transform: scale(1.02);
-        }
-
-        .button-secondary {
-            color: #2997ff;
-            font-size: 17px;
-            line-height: 1.17648;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .button-secondary:hover {
-            text-decoration: underline;
-        }
-
-        /* Sections */
-        .section {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 100px 20px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .section-title {
-            font-size: 48px;
-            line-height: 1.08349;
-            font-weight: 600;
-            letter-spacing: -0.003em;
-            margin-bottom: 16px;
-        }
-
-        .section-subtitle {
-            font-size: 21px;
-            line-height: 1.381;
-            font-weight: 400;
-            letter-spacing: 0.011em;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            color: #a1a1a6;
-        }
-
-        .product-image-feature {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            margin: 40px auto;
-            filter: drop-shadow(0 0 20px rgba(166, 177, 225, 0.3));
-            transition: transform 0.5s ease;
-        }
-
-        /* Features */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .feature {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #A6B1E1, #D3E0EA);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .feature-title {
-            font-size: 21px;
-            line-height: 1.19048;
-            font-weight: 600;
-            letter-spacing: 0.011em;
-            margin-bottom: 12px;
-        }
-
-        .feature-desc {
-            font-size: 17px;
-            line-height: 1.47059;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-            color: #a1a1a6;
-        }
-
-        /* Specs Grid */
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .spec-item {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 18px;
-            padding: 30px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .spec-item:hover {
-            transform: translateY(-5px);
-            background-color: rgba(255, 255, 255, 0.08);
-        }
-
-        .spec-title {
-            font-size: 19px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #f5f5f7;
-        }
-
-        .spec-value {
-            font-size: 17px;
-            line-height: 1.47059;
-            color: #a1a1a6;
-        }
-
-        /* Buy Section */
-        .buy-section {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .buy-title {
-            font-size: 40px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #A6B1E1 0%, #D3E0EA 50%, #A6B1E1 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .buy-price {
-            font-size: 24px;
-            font-weight: 400;
-            margin-bottom: 5px;
-        }
-
-        .price-note {
-            font-size: 14px;
-            color: #a1a1a6;
-            margin-bottom: 30px;
-        }
-
-        /* Footer */
-        footer {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 20px;
-            font-size: 12px;
-            color: #86868b;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-content {
-            padding: 17px 0;
-        }
-
-        .footer-legal {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 10px;
-        }
 
         /* Animation */
         @keyframes fadeUp {
@@ -363,54 +87,11 @@
         }
 
         .animate {
-            opacity: 0;
             animation: fadeUp 1s ease forwards;
         }
 
-        .animate:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .animate:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        .divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
-            margin: 0 auto;
-            width: 80%;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 40px;
-            }
-            
-            .hero-subtitle {
-                font-size: 21px;
-            }
-            
-            .section-title {
-                font-size: 32px;
-            }
-            
-            .section-subtitle {
-                font-size: 17px;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-list {
-                justify-content: space-around;
-            }
-            
-            .nav-list li:not(:first-child):not(:last-child) {
-                display: none;
-            }
+        .cta-container {
+            margin: 20px 0 40px;
         }
     </style>
 </head>
@@ -438,9 +119,10 @@
                 
                 <div class="cta-container">
                     <a href="#" class="button">Buy</a>
-                    <a href="#" class="button-secondary">Learn more ›</a>
+                    <a href="#" class="button-secondary">Learn more ></a>
                 </div>
             </div>
+            
             
             <div class="animate">
                 <img src="images/bloodproject.png" alt="Connected BloodProject ring" class="product-image">
@@ -487,4 +169,39 @@
                 <p class="spec-value">Flexible 360° OLED display with scratch-resistant glass</p>
             </div>
             <div class="spec-item">
-            
+                <h4 class="spec-title">Sensors</h4>
+                <p class="spec-value">ECG, oximeter, temperature, accelerometer, GPS</p>
+            </div>
+            <div class="spec-item">
+                <h4 class="spec-title">Connectivity</h4>
+                <p class="spec-value">Bluetooth 5.3, Wi-Fi 6E, NFC, Ultra Wideband</p>
+            </div>
+            <div class="spec-item">
+                <h4 class="spec-title">Durability</h4>
+                <p class="spec-value">Waterproof up to 100m, IP68 certified</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="buy-section animate">
+        <h2 class="buy-title">BloodProject</h2>
+        <p class="buy-price">Starting at €999</p>
+        <p class="price-note">Or €83.25/month for 12 months*</p>
+        
+        <div class="cta-container">
+            <a href="#" class="button">Buy</a>
+            <a href="#" class="button-secondary">Learn more ></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>*Financing subject to conditions.</p>
+            <div class="footer-legal">
+                <p>Copyright © 2025 BloodProject Technologies. All rights reserved.</p>
+                <p>Privacy | Terms of Use | Sales and Refunds | Legal Notices | Sitemap</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
