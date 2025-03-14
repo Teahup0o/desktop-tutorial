@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Épisodes - Grimposphère</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/grimposphere-logo.png" alt="Logo Grimposphère" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="episodes.html" class="active">Épisodes</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <section class="episodes-header">
+            <h1>Tous les épisodes</h1>
+            <p>Retrouvez-nous toutes les deux semaines pour des discussions passionnantes dans la Grimposphère</p>
+        </section>
+
+        <section class="episodes-list">
+            <!-- Exemple d'épisode 1 - À répliquer pour chaque épisode -->
+            <div class="episode-card">
+                <div class="episode-info">
+                    <span class="episode-number">Épisode 1</span>
+                    <h2 class="episode-title">Titre de l'épisode</h2>
+                    <p class="episode-date">1 mars 2025</p>
+                    <p class="episode-description">Description de l'épisode. Parlez ici de votre invité et des sujets abordés dans cet épisode...</p>
+                    <div class="episode-tags">
+                        <span class="tag">Bloc</span>
+                        <span class="tag">Compétition</span>
+                    </div>
+                </div>
+                <div class="episode-player">
+                    <!-- Remplacez VOTRE_ID_EPISODE par l'identifiant de votre épisode Acast -->
+                    <iframe src="https://embed.acast.com/VOTRE_ID_EPISODE_1" frameBorder="0" width="100%" height="190px"></iframe>
+                </div>
+            </div>
+
+            <!-- Exemple d'épisode 2 -->
+            <div class="episode-card">
+                <div class="episode-info">
+                    <span class="episode-number">Épisode 2</span>
+                    <h2 class="episode-title">Titre de l'épisode 2</h2>
+                    <p class="episode-date">15 mars 2025</p>
+                    <p class="episode-description">Description de l'épisode. Parlez ici de votre invité et des sujets abordés dans cet épisode...</p>
+                    <div class="episode-tags">
+                        <span class="tag">Voies</span>
+                        <span class="tag">Entrainement</span>
+                    </div>
+                </div>
+                <div class="episode-player">
+                    <!-- Remplacez VOTRE_ID_EPISODE par l'identifiant de votre épisode Acast -->
+                    <iframe src="https://embed.acast.com/VOTRE_ID_EPISODE_2" frameBorder="0" width="100%" height="190px"></iframe>
+                </div>
+            </div>
+
+            <!-- Ajoutez d'autres épisodes de la même façon -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://instagram.com/grimposphere" target="_blank" class="social-icon">Instagram</a>
+            <a href="https://spotify.com" target="_blank" class="social-icon">Spotify</a>
+            <a href="https://apple.com/apple-podcasts" target="_blank" class="social-icon">Apple Podcasts</a>
+            <a href="https://shows.acast.com/grimposphere" target="_blank" class="social-icon">Acast</a>
+        </div>
+        <p class="copyright">© 2025 Grimposphère - Tous droits réservés</p>
+    </footer>
+</body>
+</html>
