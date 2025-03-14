@@ -1,453 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BloodProject - Officially Unveiled</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: #000;
-            color: #f5f5f7;
-            line-height: 1.47059;
-            font-weight: 400;
-            letter-spacing: -0.022em;
-        }
-
-        .container {
-            margin: 0 auto;
-            width: 100%;
-            max-width: 2560px;
-        }
-
-        /* Navigation */
-        nav {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: saturate(180%) blur(20px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 9999;
-            height: 44px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .nav-content {
-            max-width: 980px;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 22px;
-        }
-
-        .nav-list {
-            list-style: none;
-            display: flex;
-            height: 100%;
-            align-items: center;
-        }
-
-        .nav-list li {
-            display: inline-flex;
-            height: 100%;
-            align-items: center;
-        }
-
-        .nav-list a {
-            color: #f5f5f7;
-            opacity: 0.8;
-            text-decoration: none;
-            font-size: 12px;
-            margin: 0 10px;
-            transition: opacity 0.3s;
-        }
-
-        .nav-list a:hover {
-            opacity: 1;
-        }
-
-        /* Hero section */
-        .hero {
-            padding-top: 44px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            position: relative;
-        }
-
-        .hero-text {
-            max-width: 600px;
-            margin: 0 auto;
-            padding-top: 50px;
-        }
-
-        .hero-eyebrow {
-            font-size: 19px;
-            line-height: 1.21053;
-            font-weight: 600;
-            letter-spacing: .012em;
-            margin-bottom: 6px;
-            color: #6366f1;
-        }
-
-        .hero-title {
-            font-size: 48px;
-            line-height: 1.08349;
-            font-weight: 600;
-            letter-spacing: -.003em;
-            margin-bottom: 15px;
-        }
-
-        .hero-subtitle {
-            font-size: 24px;
-            line-height: 1.16667;
-            font-weight: 400;
-            letter-spacing: .009em;
-            margin-bottom: 14px;
-        }
-
-        .hero-image {
-            width: 100%;
-            margin: 20px auto 0;
-            display: block;
-            max-width: 900px;
-        }
-
-        .product-image {
-            max-width: 600px;
-            margin: 40px auto;
-            display: block;
-        }
-
-        .product-image-feature {
-            max-width: 500px;
-            margin: 0 auto 40px;
-            display: block;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(180deg, #000 0%, #2e0a3a 50%, #180537 100%);
-            padding-bottom: 100px;
-        }
-
-        /* Sections */
-        .section {
-            margin: 0 auto;
-            text-align: center;
-            padding: 100px 20px;
-            max-width: 980px;
-        }
-
-        .section-title {
-            font-size: 48px;
-            line-height: 1.08349;
-            font-weight: 600;
-            letter-spacing: -.003em;
-            margin-bottom: 25px;
-        }
-
-        .section-subtitle {
-            font-size: 24px;
-            line-height: 1.16667;
-            font-weight: 400;
-            letter-spacing: .009em;
-            margin-bottom: 50px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #a1a1a6;
-        }
-
-        /* Features */
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 70px;
-        }
-
-        .feature {
-            width: 30%;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 10px;
-            color: #6366f1;
-        }
-
-        .feature-title {
-            font-size: 21px;
-            line-height: 1.19048;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .feature-desc {
-            font-size: 17px;
-            line-height: 1.47059;
-            color: #a1a1a6;
-        }
-
-        /* Divider */
-        .divider {
-            width: 100%;
-            max-width: 980px;
-            margin: 20px auto;
-            height: 1px;
-            background-color: #333;
-        }
-
-        /* Buy section */
-        .buy-section {
-            text-align: center;
-            padding: 100px 20px;
-            background-color: #000;
-        }
-
-        .buy-title {
-            font-size: 40px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .buy-price {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #a1a1a6;
-        }
-
-        .price-note {
-            font-size: 14px;
-            color: #86868b;
-            margin-bottom: 30px;
-        }
-
-        /* Buttons */
-        .button {
-            background-color: #0071e3;
-            border-radius: 980px;
-            font-size: 17px;
-            line-height: 1.17648;
-            font-weight: 400;
-            letter-spacing: -.022em;
-            padding: 8px 16px;
-            min-width: 28px;
-            color: #fff;
-            text-decoration: none;
-            display: inline-block;
-            margin: 0 10px;
-        }
-
-        .button:hover {
-            background-color: #0077ED;
-        }
-
-        .button-secondary {
-            font-size: 17px;
-            line-height: 1.23536;
-            font-weight: 400;
-            letter-spacing: -.022em;
-            color: #2997ff;
-            text-decoration: none;
-            display: inline-block;
-            margin: 0 10px;
-        }
-
-        .button-secondary:hover {
-            text-decoration: underline;
-        }
-
-        /* Specs grid */
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin: 50px auto;
-            max-width: 800px;
-        }
-
-        .spec-item {
-            text-align: left;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 18px;
-        }
-
-        .spec-title {
-            font-size: 19px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .spec-value {
-            font-size: 17px;
-            color: #a1a1a6;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #f5f5f7;
-            color: #86868b;
-            padding: 20px;
-            font-size: 12px;
-            line-height: 1.33341;
-        }
-
-        .footer-content {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .footer-legal {
-            padding-top: 17px;
-            margin-top: 20px;
-            border-top: 1px solid #d2d2d7;
-        }
-
-        /* Animation */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate {
-            animation: fadeUp 1s ease forwards;
-        }
-
-        .cta-container {
-            margin: 20px 0 40px;
-        }
-    </style>
+    <title>Grimposphère - Le podcast de l'univers vertical</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <ul class="nav-list">
-                <li><a href="#">BloodProject</a></li>
-                <li><a href="#">Ring</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Design</a></li>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Buy</a></li>
-            </ul>
+    <header>
+        <div class="logo-container">
+            <img src="images/grimposphere-logo.png" alt="Logo Grimposphère" class="logo">
         </div>
-    </nav>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="episodes.html">Épisodes</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="gradient-bg">
+    <main>
         <section class="hero">
-            <div class="hero-text animate">
-                <p class="hero-eyebrow">New</p>
-                <h1 class="hero-title">BloodProject</h1>
-                <p class="hero-subtitle">The future at your fingertips.</p>
-                <p>Starting at €999</p>
-                
-                <div class="cta-container">
-                    <a href="#" class="button">Buy</a>
-                    <a href="#" class="button-secondary">Learn more ></a>
+            <div class="hero-content">
+                <h1>Bienvenue dans la Grimposphère ! 🪐</h1>
+                <p class="tagline">Le podcast de l'univers vertical, où l'on papote avec celles et ceux qui façonnent la grimpe d'aujourd'hui et demain.</p>
+                <div class="cta-buttons">
+                    <a href="episodes.html" class="cta-button">Écouter les épisodes</a>
+                    <a href="https://shows.acast.com/grimposphere" target="_blank" class="cta-button secondary">S'abonner</a>
                 </div>
             </div>
-            
-            <div class="animate">
-                <img src="images/bloodproject.png" alt="Connected BloodProject ring" class="product-image">
+        </section>
+
+        <section class="latest-episode">
+            <h2>Dernier épisode</h2>
+            <div class="episode-player">
+                <!-- Remplacez VOTRE_ID_EPISODE par l'identifiant de votre dernier épisode Acast -->
+                <iframe src="https://embed.acast.com/VOTRE_ID_EPISODE" frameBorder="0" width="100%" height="190px"></iframe>
             </div>
         </section>
-    </div>
 
-    <section class="section animate">
-        <h2 class="section-title">Revolutionary Technology.</h2>
-        <p class="section-subtitle">BloodProject introduces a wearable technology never seen before, combining a 360° display with cutting-edge sensors in a sleek and comfortable design.</p>
-        
-        <img src="images/bloodproject.png" alt="Connected BloodProject ring" class="product-image-feature">
-        
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">●</div>
-                <h3 class="feature-title">360° Interface</h3>
-                <p class="feature-desc">A full display that surrounds your finger for an unprecedented user experience.</p>
+        <section class="about-brief">
+            <h2>Qui sommes-nous ?</h2>
+            <div class="about-content">
+                <p>Nous sommes Agathe et Gabrielle, vos deux nouvelles animatrices préférées. Amoureuses de la grimpe sous toutes ses formes, on avait soif d'aventures et de rencontres autour de notre sport ; alors on a créé Grimposphère ✨</p>
+                <a href="about.html" class="read-more">En savoir plus</a>
             </div>
-            <div class="feature">
-                <div class="feature-icon">●</div>
-                <h3 class="feature-title">220+ Metrics</h3>
-                <p class="feature-desc">Track over 220 health and performance indicators in real time.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">●</div>
-                <h3 class="feature-title">3-Day Battery Life</h3>
-                <p class="feature-desc">Our revolutionary battery technology provides up to 72 hours of use.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section class="section animate">
-        <h2 class="section-title">An Immersive Experience</h2>
-        <p class="section-subtitle">The 360° touchscreen redefines interaction with your wearable device. Control everything with a simple tap or swipe.</p>
-        
-        <img src="images/bloodproject.png" alt="BloodProject user interface" class="product-image-feature">
-        
-        <div class="specs-grid">
-            <div class="spec-item">
-                <h4 class="spec-title">Display</h4>
-                <p class="spec-value">Flexible 360° OLED display with scratch-resistant glass</p>
-            </div>
-            <div class="spec-item">
-                <h4 class="spec-title">Sensors</h4>
-                <p class="spec-value">ECG, oximeter, temperature, accelerometer, GPS</p>
-            </div>
-            <div class="spec-item">
-                <h4 class="spec-title">Connectivity</h4>
-                <p class="spec-value">Bluetooth 5.3, Wi-Fi 6E, NFC, Ultra Wideband</p>
-            </div>
-            <div class="spec-item">
-                <h4 class="spec-title">Durability</h4>
-                <p class="spec-value">Waterproof up to 100m, IP68 certified</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="buy-section animate">
-        <h2 class="buy-title">BloodProject</h2>
-        <p class="buy-price">Starting at €999</p>
-        <p class="price-note">Or €83.25/month for 12 months*</p>
-        
-        <div class="cta-container">
-            <a href="#" class="button">Buy</a>
-            <a href="#" class="button-secondary">Learn more ></a>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <div class="footer-content">
-            <p>*Financing subject to conditions.</p>
-            <div class="footer-legal">
-                <p>Copyright © 2025 BloodProject Technologies. All rights reserved.</p>
-                <p>Privacy | Terms of Use | Sales and Refunds | Legal Notices | Sitemap</p>
-            </div>
+        <div class="social-links">
+            <a href="https://instagram.com/grimposphere" target="_blank" class="social-icon">Instagram</a>
+            <a href="https://spotify.com" target="_blank" class="social-icon">Spotify</a>
+            <a href="https://apple.com/apple-podcasts" target="_blank" class="social-icon">Apple Podcasts</a>
+            <a href="https://shows.acast.com/grimposphere" target="_blank" class="social-icon">Acast</a>
         </div>
+        <p class="copyright">© 2025 Grimposphère - Tous droits réservés</p>
     </footer>
 </body>
 </html>
