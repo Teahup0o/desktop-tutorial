@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 import asyncpg
 import os
 from dotenv import load_dotenv
@@ -30,14 +31,17 @@ async def read_root():
 @app.get("/users")
 async def get_users():
     records = await app.state.db.fetch("SELECT * FROM users;")
-    return [dict(record) for record in records]
+    users = [dict(record) for record in records]
+    return JSONResponse(content={"users": users})
 
 @app.get("/orders")
 async def get_orders():
     records = await app.state.db.fetch("SELECT * FROM orders;")
-    return [dict(record) for record in records]
+    orders = [dict(record) for record in records]
+    return JSONResponse(content={"orders": orders})
 
 @app.get("/tables")
 async def get_tables():
     records = await app.state.db.fetch("SELECT * FROM tables;")
-    return [dict(record) for record in records]
+    tables = [dict(record) for record in records]
+    return JSONResponse(content={"tables": tables})
