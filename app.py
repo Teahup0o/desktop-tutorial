@@ -1,15 +1,7 @@
-from flask import Flask
+from fastapi import FastAPI
 
-def create_app():
-    app = Flask(__name__)
+app = FastAPI()
 
-    @app.route("/")
-    def home():
-        return "Hello, Flask server is running!"
-
-    return app
-
-# Exécuter en local avec python app.py
-if __name__ == "__main__":
-    app = create_app()
-    app.run(debug=True)
+@app.get("/")
+async def read_root():
+    return {"message": "FastAPI server is running!"}
