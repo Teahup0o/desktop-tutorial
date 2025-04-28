@@ -1,12 +1,12 @@
 from fastapi import FastAPI
-from dotenv import load_dotenv
 import asyncpg
 import os
+from dotenv import load_dotenv
 
-# Charger les variables du .env
+# Charger les variables d'environnement
 load_dotenv()
 
-# Créer l'app FastAPI
+# Créer l'application FastAPI
 app = FastAPI()
 
 @app.on_event("startup")
@@ -25,4 +25,19 @@ async def shutdown():
 
 @app.get("/")
 async def read_root():
-    return {"message": "Hello, database is connected!"}
+    return {"message": "Hello from FastAPI + PostgreSQL!"}
+
+@app.get("/users")
+async def get_users():
+    records = await app.state.db.fetch("SELECT * FROM users;")
+    return [dict(record) for record in records]
+
+@app.get("/orders")
+async def get_orders():
+    records = await app.state.db.fetch("SELECT * FROM orders;")
+    return [dict(record) for record in records]
+
+@app.get("/tables")
+async def get_tables():
+    records = await app.state.db.fetch("SELECT * FROM tables;")
+    return [dict(record) for record in records]
