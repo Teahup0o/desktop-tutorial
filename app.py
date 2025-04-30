@@ -1,6 +1,7 @@
-# app.py
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException
-import asyncpg, os, io, datetime
+from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+import asyncpg
+import os
 from dotenv import load_dotenv
 from steg_custom import encode_lsb
 from PIL import Image
@@ -28,31 +29,20 @@ async def shutdown():
 async def root():
     return {"message": "Hello from FastAPI + PostgreSQL!"}
 
+@app.get("/users")
+async def get_users():
+    records = await app.state.db.fetch("SELECT * FROM users;")
+    users = [dict(record) for record in records]
+    return JSONResponse(content={"users": users})
 
-# upload photo + steganographie 
-@app.post("/upload_profile_photo")
-async def upload_profile_photo(
-    user_id: int = Form(...),
-    file: UploadFile = File(...)
-):
-    if file.content_type not in ("image/png", "image/jpeg"):
-        raise HTTPException(status_code=400, detail="PNG ou JPG uniquement")
+@app.get("/orders")
+async def get_orders():
+    records = await app.state.db.fetch("SELECT * FROM orders;")
+    orders = [dict(record) for record in records]
+    return JSONResponse(content={"orders": orders})
 
-    raw = await file.read()
-    img = Image.open(io.BytesIO(raw)).convert("RGB")
-
-    secret = f"{user_id}|{datetime.date.today()}"
-    try:
-        stego = encode_lsb(img, secret.encode())
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-
-    buf = io.BytesIO()
-    stego.save(buf, format="PNG")
-    stego_bytes = buf.getvalue()
-
-    await app.state.db.execute(
-        "UPDATE users SET photo=$1 WHERE id=$2;",
-        stego_bytes, user_id
-    )
-    return {"ok": True, "embedded": secret}
+@app.get("/tables")
+async def get_tables():
+    records = await app.state.db.fetch("SELECT * FROM tables;")
+    tables = [dict(record) for record in records]
+    return JSONResponse(content={"tables": tables})
